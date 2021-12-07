@@ -1,4 +1,3 @@
-import kotlinx.coroutines.*
 import java.io.File
 
 private const val DAYS = 256
@@ -6,7 +5,7 @@ private const val GESTATION_CYCLE = 7
 private const val BREEDING_DELAY = 2
 private val answers = mutableMapOf<Int, Long>()
 
-fun main() = runBlocking {
+fun main() {
     val input = File("/Users/pawegio/Desktop/input").readText()
     val initialFish = input.split(',').map { it.toInt() }.toMutableList()
     println("Initial state: ${initialFish.joinToString(",")}")
