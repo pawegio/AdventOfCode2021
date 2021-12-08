@@ -19,7 +19,7 @@ fun main() {
     println("result: $result")
 }
 
-fun getLines(input: List<String>): Pair<List<Line>, Int> {
+private fun getLines(input: List<String>): Pair<List<Line>, Int> {
     var size = 0
     return input.map {
         val numbers = it.replace(" -> ", ",").split(",").map(String::toInt)
@@ -28,7 +28,7 @@ fun getLines(input: List<String>): Pair<List<Line>, Int> {
     } to size + 1
 }
 
-fun getDiagram(lines: List<Line>, size: Int): Diagram {
+private fun getDiagram(lines: List<Line>, size: Int): Diagram {
     val positions = Array(size + 5) { Array(size + 5) { 0 } }
     lines
         .filter { it.from.x == it.to.x || it.from.y == it.to.y }
@@ -74,10 +74,10 @@ fun getDiagram(lines: List<Line>, size: Int): Diagram {
     return Diagram(positions)
 }
 
-class Diagram(val positions: Array<Array<Int>>)
+private class Diagram(val positions: Array<Array<Int>>)
 
-data class Line(val from: Coords, val to: Coords)
+private data class Line(val from: Coords, val to: Coords)
 
-data class Coords(val x: Int, val y: Int)
+private data class Coords(val x: Int, val y: Int)
 
-enum class DiagonalDirection { UpRight, UpLeft, DownRight, DownLeft }
+private enum class DiagonalDirection { UpRight, UpLeft, DownRight, DownLeft }
