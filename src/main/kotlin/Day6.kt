@@ -13,7 +13,7 @@ fun main() {
     println("Count: $count")
 }
 
-fun simulate(days: Int): Long = answers[days] ?: run {
+private fun simulate(days: Int): Long = answers[days] ?: run {
     var count = 0L
     var remainingDays = days
     while (remainingDays > 0) {
